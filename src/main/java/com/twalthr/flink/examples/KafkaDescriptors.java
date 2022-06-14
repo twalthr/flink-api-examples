@@ -4,7 +4,7 @@ import org.apache.flink.table.api.DataTypes;
 import org.apache.flink.table.api.Schema;
 import org.apache.flink.table.api.TableDescriptor;
 
-public class TopicDescriptors {
+public class KafkaDescriptors {
 
   public static TableDescriptor CUSTOMERS_DESCRIPTOR =
       TableDescriptor.forConnector("upsert-kafka")
@@ -40,5 +40,5 @@ public class TopicDescriptors {
           .option("properties.bootstrap.servers", "localhost:9092")
           .build();
 
-  private TopicDescriptors() {}
+  private KafkaDescriptors() {}
 }

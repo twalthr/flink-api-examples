@@ -18,8 +18,8 @@ public class Example_10_Table_Temporal_Join_Pure {
     config.setLocalTimeZone(ZoneId.of("UTC"));
 
     // use descriptor API to use dedicated table connectors
-    tableEnv.createTemporaryTable("Customers", TopicDescriptors.CUSTOMERS_DESCRIPTOR);
-    tableEnv.createTemporaryTable("Transactions", TopicDescriptors.TRANSACTIONS_DESCRIPTOR);
+    tableEnv.createTemporaryTable("Customers", KafkaDescriptors.CUSTOMERS_DESCRIPTOR);
+    tableEnv.createTemporaryTable("Transactions", KafkaDescriptors.TRANSACTIONS_DESCRIPTOR);
 
     Table deduplicateTransactions =
         tableEnv.sqlQuery(

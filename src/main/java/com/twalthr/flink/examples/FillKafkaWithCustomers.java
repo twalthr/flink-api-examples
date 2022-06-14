@@ -64,6 +64,6 @@ public class FillKafkaWithCustomers {
 
     tableEnv
         .fromChangelogStream(customerStream)
-        .executeInsert(TopicDescriptors.CUSTOMERS_DESCRIPTOR);
+        .executeInsert(KafkaDescriptors.CUSTOMERS_DESCRIPTOR);
   }
 }

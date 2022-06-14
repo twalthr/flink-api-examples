@@ -14,6 +14,6 @@ public class FillKafkaWithTransactions {
 
     tableEnv
         .fromDataStream(transactionStream)
-        .executeInsert(TopicDescriptors.TRANSACTIONS_DESCRIPTOR);
+        .executeInsert(KafkaDescriptors.TRANSACTIONS_DESCRIPTOR);
   }
 }
