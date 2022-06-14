@@ -11,7 +11,9 @@ is capable of today. We present how the API solves different scenarios:
 - as a batch processor,
 - a changelog processor,
 - a change data capture (CDC) hub,
-- or a streaming ETL tool with many built-in functions and operators for deduplicating, joining, and aggregating data.
+- or a streaming ETL tool
+
+with many built-in functions and operators for deduplicating, joining, and aggregating data.
 
 It shows hybrid pipelines in which both APIs interact in symbiosis and contribute their unique strengths.
 
