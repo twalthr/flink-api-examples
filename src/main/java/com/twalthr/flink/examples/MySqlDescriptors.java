@@ -23,6 +23,7 @@ public class MySqlDescriptors {
           .option("database-name", "example_db")
           .option("table-name", "Transactions")
           .option("server-id", "5800-5900")
+          .option("heartbeat.interval", "1s")
           .build();
 
   public static final TableDescriptor TRANSACTIONS_JDBC =
