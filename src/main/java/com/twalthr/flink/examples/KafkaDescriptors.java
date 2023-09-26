@@ -40,5 +40,20 @@ public class KafkaDescriptors {
           .option("properties.bootstrap.servers", "localhost:9092")
           .build();
 
+  public static TableDescriptor ORDERS_DESCRIPTOR =
+      TableDescriptor.forConnector("kafka")
+          .schema(
+              Schema.newBuilder()
+                  .column("o_rowtime", DataTypes.TIMESTAMP_LTZ(3))
+                  .column("o_id", DataTypes.BIGINT().notNull())
+                  .column("o_status", DataTypes.STRING())
+                  .watermark("o_rowtime", "o_rowtime - INTERVAL '1' SECONDS")
+                  .build())
+          .option("format", "json")
+          .option("topic", "orders")
+          .option("scan.startup.mode", "earliest-offset")
+          .option("properties.bootstrap.servers", "localhost:9092")
+          .build();
+
   private KafkaDescriptors() {}
 }
